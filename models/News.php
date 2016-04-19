@@ -54,10 +54,13 @@ class News
 
     public static function Update($arr)
     {
+        $title = $arr['title'];
+        $content = $arr['content'];
+        $id = $arr['id'];
 
         $mysqli = Db::getConnection();
 
-        $mysqli->query('UPDATE news SET title='.$arr['title'].', content='.$arr['content'].'  WHERE id='.$arr['id']);
+        $mysqli->query('UPDATE news SET title='."\"$title\"".', content='."\"$content\"".'  WHERE id='."\"$id\"");
         $mysqli->close();
         header ("Location: /");
     }
