@@ -122,6 +122,11 @@
                         <p><input type="submit" value="Редактировать"></p>
                     </form>
                 </div>
+                <div>
+                    <form action="/index.php?ctrl=Admin&act=delete&id=<?php echo $item['id']; ?>" method="post">
+                        <p><input type="submit" value="Удалить"/></p>
+                    </form>
+                </div>
                 <br>
             </div>
             <?php endforeach; ?>

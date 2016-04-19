@@ -65,4 +65,12 @@ class News
         header ("Location: /");
     }
 
+    public static function Delete($id)
+    {
+        $mysqli = Db::getConnection();
+        $mysqli->query('DELETE FROM news WHERE id='.$id);
+        $mysqli->close();
+        header ("Location: /");
+    }
+
 }

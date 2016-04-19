@@ -21,4 +21,13 @@ class AdminController
         }
         News::Update($arr);
     }
+
+    public function actionDelete()
+    {
+        if(isset($_GET['id']))
+        {
+            $id = $_GET['id'];
+        }
+        News::Delete($id);
+    }
 }
