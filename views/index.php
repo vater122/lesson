@@ -91,7 +91,7 @@
 
       <!-- Left Container -->
       <div id="lcnt">
-         <?php foreach($arr as $item): ?>
+         <?php foreach($items as $item): ?>
          <!-- Post -->
          <div class="post">
 

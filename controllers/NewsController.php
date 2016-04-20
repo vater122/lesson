@@ -4,13 +4,21 @@ class NewsController
 {
     public function actionAll()
     {
-        $arr = News::Select();
-        include __DIR__ . '/../views/index.php';
+        $news = News::Select();
+
+        $view = new View();
+        //обращаемся к отсут. св-ву items(вызывается __set у View)
+        $view->items = $news;
+        $view->dispaly('/index.php');
     }
     public function actionOne()
     {
          $id = $_GET['id'];
-         $arr = News::SelectById($id);
-        include __DIR__ . '/../views/idpage.php';
+         $onenew = News::SelectById($id);
+
+        $view = new View();
+        //обращаемся к отсут. св-ву items(вызывается __set у View)
+        $view->item = $onenew;
+        $view->dispaly('/idpage.php');
     }
 }

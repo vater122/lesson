@@ -89,41 +89,41 @@
 
         <!-- Left Container -->
         <div id="lcnt">
-            <?php foreach($arr as $item): ?>
+            <?php foreach($item as $row): ?>
             <!-- Post -->
             <div class="post">
 
                 <!-- Post Details -->
                 <div class="post_inf">
 
-                    <span><?php echo $item['date']; ?></span><br />
-                    <span class="posn"><?php echo $item['author']; ?></span><br />
+                    <span><?php echo $row['date']; ?></span><br />
+                    <span class="posn"><?php echo $row['author']; ?></span><br />
                     <span class="posc">3 Comments</span>
 
                 </div>
 
                 <!-- Post Title - Permalink -->
                 <h1>
-                    <a href="#"><?php echo $item['title']; ?></a>
+                    <a href="#"><?php echo $row['title']; ?></a>
                 </h1>
 
                 <!-- Post Content -->
                 <img src="/template/images/art_pic1.jpg" alt="art_pic1" />
 
-                <p><?php echo $item['content']; ?></p>
+                <p><?php echo $row['content']; ?></p>
 
                 <br>
                 <div>
                     <strong>Редактировать новость</strong>
                     <form action="/index.php?ctrl=Admin&act=update" method="post">
-                        <input type="hidden" name="id" value="<?php echo $item['id']; ?>"/>
+                        <input type="hidden" name="id" value="<?php echo $row['id']; ?>"/>
                         <p><input type="text" name="title" value="">  Заголовок</p>
                         <p><input type="text" name="content" value="">  Новость</p>
                         <p><input type="submit" value="Редактировать"></p>
                     </form>
                 </div>
                 <div>
-                    <form action="/index.php?ctrl=Admin&act=delete&id=<?php echo $item['id']; ?>" method="post">
+                    <form action="/index.php?ctrl=Admin&act=delete&id=<?php echo $row['id']; ?>" method="post">
                         <p><input type="submit" value="Удалить"/></p>
                     </form>
                 </div>
